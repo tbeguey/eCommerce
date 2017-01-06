@@ -12,8 +12,6 @@
     $pdo = new PDO($pdodsn, $user, $password);
     $requestMusician = "Select Nom_Musicien, Prénom_Musicien from Musicien Where Nom_Musicien Like '" . $search ."%'";
     $requestWork = "Select Titre_Oeuvre from Oeuvre where Titre_Oeuvre Like '" .$search ."%'";
-    foreach ($pdo->query($requestMusician) as $row) 
-    $requete = "Select Nom_Musicien, Prénom_Musicien from Musicien Where Nom_Musicien Like '" . $search . "%'";
     foreach ($pdo->query($requete) as $row) 
     {
         echo 'Nom / Prénom : ' . $row[utf8_decode('Nom_Musicien')]. " " . $row[utf8_decode('Prénom_Musicien')]. "<br>";
