@@ -13,5 +13,18 @@ $stmt->execute(array(':nom' => $nom,
     ':pass' => $password));
 echo "Insertion effectué";
 echo "<br>";
+
+echo "Bienvenue ".$prenom;
+echo "<br>";
+echo "Que voulez vous faire ? : ";
+echo "<br>";
+echo "parametrer mon compte";
 echo "<a href=\"index.html\"> Retour au formulaire </a>";
+
+
+if($stmt==true)
+{
+    echo "test";
+}
+
 ?>
