@@ -10,7 +10,7 @@
     $pdodsn = "$driver:Server=$host;Database=$nomDb";
     // Connexion PDO
     $pdo = new PDO($pdodsn, $user, $password);
-    $requestMusician = "Select Nom_Musicien, Prénom_Musicien from Musicien inner join Composer on Musicien.Code_Musicien = Composer.Code_Musicien"
+    $requestMusician = "Select Nom_Musicien, Prénom_Musicien, Musicien.Code_Musicien from Musicien inner join Composer on Musicien.Code_Musicien = Composer.Code_Musicien"
         . " inner join Oeuvre on Composer.Code_Oeuvre = Oeuvre.Code_Oeuvre where Nom_Musicien Like :name";
     $requestWork = "Select Titre_Oeuvre from Oeuvre where Titre_Oeuvre Like '" .$search ."%'";
     $stmt = $pdo->prepare($requestMusician);

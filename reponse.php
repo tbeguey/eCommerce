@@ -1,5 +1,6 @@
 <?php
-
+$timeUntExpire = time()+60;
+setcookie($login, $value, $timeUntExpire);
 $dbh = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD");
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
@@ -22,9 +23,7 @@ echo "parametrer mon compte";
 echo "<a href=\"index.html\"> Retour au formulaire </a>";
 
 
-if($stmt==true)
-{
-    echo "test";
-}
+
+
 
 ?>
