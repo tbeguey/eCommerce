@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>eCommerce - Tricha - Beguey</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <h1> Sign up </h1>
+  <form method="post" action="reponse.php">
+    <label id="Label1">Nom</label><input name="nom" type="text"><br>
+    <label id="Label2">Prénom</label><input name="prenom" type="text"><br>
+    <label id="Label3">Login</label><input name="login" type="text"><br>
+    <label id="Label4">Password</label><input name="password" type="password"><br>
+    <input name="Envoyer" type="submit" value="Envoyer"> 
+ </form>
+  <?php
+  ?>
+<a href="aPropos.html"> A propos </a>
+<h1>Search</h1>  <form method="post" action="reponseRecherche.php">
+	<label id="Label1">Rechercher</label><input name="recherche" type="text"><br>
+	<input name="OK" type="submit" value"OK">
+  </form>
+</body>
+</html>
