@@ -7,7 +7,7 @@
 </head>
 <body>
             
-  <h1> Sign up </h1>
+  <h1> Inscription </h1>
   <form method="post" action="reponse.php">
     <label id="Label1">Nom</label><input name="nom" type="text"><br>
     <label id="Label2">Prénom</label><input name="prenom" type="text"><br>
@@ -15,13 +15,25 @@
     <label id="Label4">Password</label><input name="password" type="password"><br>
     <input name="Envoyer" type="submit" value="Envoyer"> 
  </form>
+
+ <h1> Connexion </h1>
+<form method="post" action="reponseConnexion.php">
+    <label id="Label1">Login</label><input name="login" type="text"><br>
+    <label id="Label2">Password</label><input name="password" type="password"><br>
+    <input name="Connexion" type="submit" value="Connexion"> 
+ </form>
+
   
-<h1>Search</h1>
+<h1> Recherche </h1>
   <form method="post" action="reponseRecherche.php">
 
 	<label id="Label1">Rechercher</label><input name="recherche" type="text"><br>
 	<input name="OK" type="submit" value="OK">
   </form>
+
+<h1> Mon panier </h1>
+
 <a href="aPropos.html"> A propos </a>
+
 </body>
 </html>
