@@ -15,8 +15,8 @@ $requete = "Select Oeuvre.Titre_Oeuvre, Oeuvre.Code_Oeuvre From Oeuvre
             Where Musicien.Code_Musicien=" . $_GET['Code'];
 echo " <h1> Oeuvre associée à ce compositeur : </h1> ";
 foreach ($pdo->query($requete) as $row) {
-    echo "<a href='enregistrement.php?Code=" . $row['Code_Oeuvre'] . "'/>";
-    echo("Oeuvre " . $i . " : " . $row['Titre_Oeuvre'] . "<br>");
+    echo "<a href='enregistrement.php?Code=" . $row['Code_Oeuvre'] . ">";
+    echo $row[utf8_decde('Titre_Oeuvre')];
     $i++;
 }
 if ($i == 1) {
@@ -24,4 +24,12 @@ if ($i == 1) {
 }
 $pdo = null;
 ?>
+
+    echo "<audio src='extrait.php?Code=" . $row['Code_M'] . "'/>";
+
+    foreach ($pdo->query($requestWork) as $row) {
+    echo "<a href='enregistrement.php?Code=" . $row['Code_Oeuvre'] . "'>";
+    echo $row[utf8_decode('Titre_Oeuvre')];
+    echo "</a> <br>";
+    }
 
