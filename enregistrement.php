@@ -16,8 +16,9 @@ $request = "Select Enregistrement.Titre, Enregistrement.Code_Morceau From Enregi
             Where Oeuvre.Code_Oeuvre=" . $_GET['Code'];
 echo " <h1> Enregistrement associé à cette oeuvre : </h1> ";
 foreach ($pdo->query($request) as $row) {
-    echo("Enregistrement : "  . $row['Titre'] . "<br>");
-    echo "<audio src='extrait.php?Code=" . $row['Code_Morceau'] . "'/>";
+    echo $row[utf8_decode('Titre')];
+    echo "<br>";
+    //echo "<audio src='extrait.php?Code=" . $row['Code_Morceau'] . "'/>";
     $i++;
 }
 if ($i == 1) {
