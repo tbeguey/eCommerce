@@ -15,7 +15,8 @@ $request = "Select Oeuvre.Titre_Oeuvre, Oeuvre.Code_Oeuvre From Oeuvre
             Where Musicien.Code_Musicien=" . $_GET['Code'];
 echo " <h1> Oeuvre associée à ce compositeur : </h1> ";
 foreach ($pdo->query($request) as $row) {
-    echo "<a href='enregistrement.php?Code=" . $row['Code_Oeuvre'] . ">";
+    echo "<a href='enregistrement.php?Code=" . $row['Code_Oeuvre'];
+    echo  "'>";
     echo $row[utf8_decode('Titre_Oeuvre')];
     echo "<br>";
     $i++;
