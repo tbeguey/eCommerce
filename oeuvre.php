@@ -17,6 +17,8 @@ echo " <h1> Oeuvre associée à ce compositeur : </h1> ";
 foreach ($pdo->query($request) as $row) {
     echo "<a href='enregistrement.php?Code=" . $row['Code_Oeuvre'];
     echo  "'>";
+    echo "<img src='imageOeuvre.php?Code=" . $row['Code_Oeuvre'] . "'/>";
+    echo "</a> <br>";
     echo $row[utf8_decode('Titre_Oeuvre')];
     echo "<br>";
     $i++;
