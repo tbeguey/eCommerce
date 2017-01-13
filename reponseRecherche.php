@@ -31,7 +31,14 @@
     echo '<h1> Enregistrements dont le titre commence par ' . $search . ' : </h1>';
     foreach ($pdo->query($requestRecording) as $row){
     echo $row[utf8_decode('Titre')];
-    echo "<br>";
+    ?>
+    <html lang="fr">
+    <form method="post" action="achat.php">
+    <input name="Acheter" type="submit" value="Acheter">
+    <br>
+    </form>
+    </html>
+    <?php
     }
     $pdo = null;
 ?>

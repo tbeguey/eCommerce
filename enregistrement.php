@@ -17,7 +17,13 @@ $request = "Select Enregistrement.Titre, Enregistrement.Code_Morceau From Enregi
 echo " <h1> Enregistrement associé à cette oeuvre : </h1> ";
 foreach ($pdo->query($request) as $row) {
     echo $row[utf8_decode('Titre')];
-    echo "<br>";
+    ?>
+    <html lang="fr">
+    <form method="post" action="achat.php">
+    <input name="Acheter" type="submit" value="Acheter"> 
+    </form>
+    </html>
+    <?php
     $i++;
 }
 
