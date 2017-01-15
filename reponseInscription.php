@@ -16,12 +16,6 @@ echo "Insertion effectué";
 echo "<br>";
 }
 else{
-	echo "Mot de passe différent <br>";
+	echo "Mot de passe différent";
 }
-echo "Bienvenue ".$prenom;
-echo "<br>";
-echo "Que voulez vous faire ? : ";
-echo "<br>";
-echo "parametrer mon compte";
-echo "<a href=\"index.html\"> Retour au formulaire </a>";
 ?>

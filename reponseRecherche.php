@@ -1,4 +1,14 @@
 <?php
+    session_start();
+    if (isset($_SESSION["NOM_USER"])) 
+    {
+    echo "Bonjour ".$_SESSION["NOM_USER"];
+    }
+    else
+    {
+    header("Location: connexion.php");
+    }
+
     $search = $_POST['recherche'];
     // Paramètres de connexion
     $driver = 'sqlsrv';
