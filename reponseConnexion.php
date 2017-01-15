@@ -9,12 +9,10 @@
 	    session_start();
 	    $_SESSION["NOM_USER"]= odbc_result($result,1);
 	    odbc_close($conn);
-	    echo "a";
 	    header("Location: index.html");
     }
     else
     {//Mot de passe (et/ou login) incorrect : rejet de l'utilisateur
-	    echo "b";
-	    header("Location: connexion.php);
+	   header("Location: connexion.php");
     }
 ?>
