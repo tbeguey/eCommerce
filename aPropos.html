@@ -1,12 +1,75 @@
 <!doctype html>
 <html lang="fr">
 <head>
+  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <meta charset="utf-8">
   <title>eCommerce - Tricha - Beguey</title>
-  <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
-<body>
-  <p> Là c'est le à propos, genre tu dis ce que tu veux whala, genre je voulais que tu sache que je suis infréquentables donc fais gaffe frère. Bisous XOXO </p>
-</body>
-</html>
 
+<body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+      <script type="text/javascript" src="materialize/js/parallax.js"></script>
+        <script type="text/javascript" src="materialize/js/dropdown.js"></script>
+      <header>
+        <nav>
+       <div class="nav-wrapper  grey lighten-1">
+         <a href="#" class="brand-logo center brown-text darken-1">P'N'M</a>
+
+
+
+         <form method="post" action="reponseRecherche.php">
+      <div class="input-field">
+        <input id="search" type="search" required>
+        <label for="search">Search:<i class="material-icons"></label>
+
+        <i class="material-icons">close</i>
+
+      </div>
+    </form>
+
+
+     </nav>
+</header>
+
+
+<main>
+  <div class="parallax-container ">
+     <div class="parallax"><img src="materialize/parallax.jpg"></div>
+   </div>
+   <div class="section grey lighten-1">
+     <div class="row container center brown-text darken-1  ">
+       <h2 class="header">Peace And Music </h2>
+       <p class="brown-text darken-1 ">Peace'N'Music is your reference when you want to buy your favorite's artist's lattest album ! Thanks to professionnals working on the site 24/7, we are proud to be number one on the music Domain on Internet ! </p>
+     </div>
+   </div>
+   <div class="parallax-container">
+     <div class="parallax"><img src="materialize/parallax.jpg"></div>
+   </div>
+
+
+    <ul id='mydropdown2' class='dropdown-content'  >
+      <form method="post" action="reponseConnexion.php">
+
+      <li><label id="Label1">Identifiant</label><input name="login" type="text"><br></li>
+          <li><label id="Label2">Mot de passe</label><input name="password" type="password"><br></li>
+        </ul>
+
+
+          <div class="fixed-action-btn toolbar  ">
+            <a class="btn-floating btn-large waves-effect waves-light grey lighten-1 "><i class="material-icons brown-text darken-1 grey lighten-1">+</i></a>
+                <i class=""> </i>
+            </a>
+            <ul>
+              <li class="waves-effect waves-light"><a href="connexion.php"><i class="material-icons brown-text darken-1">LOGIN</i></a></li>
+              <li class="waves-effect waves-light"><a href="#!"><i class="material-icons brown-text darken-1">MY CART</i></a></li>
+              <li class="waves-effect waves-light"><a href="#!"><i class="material-icons brown-text darken-1">SUBSCRIPTION</i></a></li>
+              <li class="waves-effect waves-light "><a href="#!"><i class="material-icons brown-text darken-1">SETTINGS</i></a></li>
+              <li class="waves-effect waves-light "><a href="index2.html"><i class="material-icons brown-text darken-1">MENU</i></a></li>
+
+            </ul>
+          </div>
+
+
+</main>
