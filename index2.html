@@ -16,13 +16,20 @@
         <nav>
        <div class="nav-wrapper  grey lighten-1">
          <a href="#" class="brand-logo center brown-text darken-1">P'N'M</a>
-         <ul id="nav-mobile" class="left hide-on-med-and-down">
-           <li><a href="Conection" class="brown-text darken-1">Connection</a></li>
-           <li><a href="Basket" class="brown-text darken-1">My Basket</a></li>
-           <li><a class='dropdown-button btn grey lighten-1 brown-text darken-1' href='#' data-activates='mydropdown' click="false">Subscribtion<a></li>
-          <li><a  class='dropdown-button btn grey lighten-1 brown-text darken-1 position:absolute' position:"static" href='#' data-activates='mydropdown2' click="false">Connection<a></li>
 
-    </ul>
+
+
+         <form method="post" action="reponseRecherche.php">
+      <div class="input-field">
+        <input id="search" type="search" required>
+        <label for="search">Search:<i class="material-icons"></label>
+
+        <i class="material-icons">close</i>
+
+      </div>
+    </form>
+
+
      </nav>
 </header>
 
@@ -41,18 +48,6 @@
      <div class="parallax"><img src="materialize/parallax.jpg"></div>
    </div>
 
-   <ul id='mydropdown' class='dropdown-content'  >
-     <li><label id="Label1">Nom</label><input name="nom" type="text"><br></li>
-    <li> <label id="Label2">Prénom</label><input name="prenom" type="text"><br></li>
-    <li>   <label id="Label3">Identifiant</label><input name="login" type="text"><br></li>
-    <li> <label id="Label4">Mot de passe</label><input name="password" type="password"><br></li>
-    <li> <label id="Label5">Confirmer mot de passe</label><input name="confirm" type="password"><br></li>
-    <li><button class="btn waves-effect waves-light grey lighten-1 brown-text darken-1" type="submit" name="action" value="Envoyer">Submit</li>
-
-    <i class="material-icons right">send</i>
-  </button>
-
-   </ul>
 
     <ul id='mydropdown2' class='dropdown-content'  >
       <form method="post" action="reponseConnexion.php">
@@ -61,6 +56,18 @@
           <li><label id="Label2">Mot de passe</label><input name="password" type="password"><br></li>
         </ul>
 
+
+          <div class="fixed-action-btn toolbar  ">
+            <a class="btn-floating btn-large waves-effect waves-light grey lighten-1 "><i class="material-icons brown-text darken-1 grey lighten-1">+</i></a>
+                <i class=""> </i>
+            </a>
+            <ul>
+              <li class="waves-effect waves-light"><a href="connexion.php"><i class="material-icons brown-text darken-1">LOGIN</i></a></li>
+              <li class="waves-effect waves-light"><a href="#!"><i class="material-icons brown-text darken-1">MY CART</i></a></li>
+              <li class="waves-effect waves-light"><a href="#!"><i class="material-icons brown-text darken-1">SUBSCRIPTION</i></a></li>
+              <li class="waves-effect waves-light "><a href="#!"><i class="material-icons brown-text darken-1">SETTINGS</i></a></li>
+            </ul>
+          </div>
 
 
 </main>
