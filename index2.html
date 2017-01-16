@@ -9,44 +9,95 @@
 
 <body>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+      <script type="text/javascript" src="materialize/js/parallax.js"></script>
+        <script type="text/javascript" src="materialize/js/dropdown.js"></script>
       <header>
-      <nav>
-    <div class="nav-wrapper light-blue accent-4">
-      <a href="#!" class="brand-logo center ">Peace'N'Music</a>
-      <ul class="left hide-on-med-and-down">
-        <li><a href="Connection  teal orange darken-3 orange-text orange darken-3 ">Coonection </a></li>
-        <li><a href="Produits  teal orange darken-3 orange-text orange darken-3 ">Produits</a></li>
-        <li class="active"><a href="Contacter le site teal orange darken-3 orange-text orange darken-3 ">Contacter le site</a></li>
-      </ul>
-    </div>
-  </nav>
+        <nav>
+       <div class="nav-wrapper  grey lighten-1">
+         <a href="#" class="brand-logo center brown-text darken-1">P'N'M</a>
+         <ul id="nav-mobile" class="left hide-on-med-and-down">
+           <li><a href="Conection" class="brown-text darken-1">Connection</a></li>
+           <li><a href="Basket" class="brown-text darken-1">My Basket</a></li>
+           <li><a class='dropdown-button btn grey lighten-1 brown-text darken-1' href='#' data-activates='mydropdown' click="false">Subscribtion<a></li>
+          <li><a  class='dropdown-button btn grey lighten-1 brown-text darken-1 position:absolute' position:"static" href='#' data-activates='mydropdown2' click="false">Connection<a></li>
+
+    </ul>
+     </nav>
 </header>
 
 
-</body>
-<footer class="page-footer teal light-blue accent-4">
-         <div class="container">
-           <div class="row">
-             <div class="col l6 s12">
-               <h5 class="white-text">Un site crée par Théo le moche et Yamin le consanguin</h5>
-               <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-             </div>
-             <div class="col l4 offset-l2 s12">
-               <ul>
-                 <li><a class="grey-text text-lighten-3" href="#!">A propos</a></li>
-                 <li><a class="grey-text text-lighten-3" href="#!">Plus d'information</a></li>
+<main>
+  <div class="parallax-container ">
+     <div class="parallax"><img src="materialize/parallax.jpg"></div>
+   </div>
+   <div class="section grey lighten-1">
+     <div class="row container center brown-text darken-1  ">
+       <h2 class="header">Peace And Music </h2>
+       <p class="brown-text darken-1 ">Peace'N'Music is your reference when you want to buy your favorite's artist's lattest album ! Thanks to professionnals working on the site 24/7, we are proud to be number one on the music Domain on Internet ! </p>
+     </div>
+   </div>
+   <div class="parallax-container">
+     <div class="parallax"><img src="materialize/parallax.jpg"></div>
+   </div>
 
-               </ul>
-             </div>
-           </div>
-         </div>
-         <div class="footer-copyright">
-           <div class="container">
-           © 2014 Copyright Text
-           <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-           </div>
-         </div>
-       </footer>
+   <ul id='mydropdown' class='dropdown-content'  >
+     <li><label id="Label1">Nom</label><input name="nom" type="text"><br></li>
+    <li> <label id="Label2">Prénom</label><input name="prenom" type="text"><br></li>
+    <li>   <label id="Label3">Identifiant</label><input name="login" type="text"><br></li>
+    <li> <label id="Label4">Mot de passe</label><input name="password" type="password"><br></li>
+    <li> <label id="Label5">Confirmer mot de passe</label><input name="confirm" type="password"><br></li>
+    <li><button class="btn waves-effect waves-light grey lighten-1 brown-text darken-1" type="submit" name="action" value="Envoyer">Submit</li>
+
+    <i class="material-icons right">send</i>
+  </button>
+
+   </ul>
+
+    <ul id='mydropdown2' class='dropdown-content'  >
+      <form method="post" action="reponseConnexion.php">
+
+      <li><label id="Label1">Identifiant</label><input name="login" type="text"><br></li>
+          <li><label id="Label2">Mot de passe</label><input name="password" type="password"><br></li>
+        </ul>
+
+
+
+</main>
+
+<footer>
+
+
+
+
+    <footer class="page-footer grey lighten-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 offset-m8 ">
+            <h5 class="center brown-text darken-1">A site created by Théo Sheguey and Marmoud </h5>
+          </div>
+          <div class="col l1 ">
+            <h5 class=" links brown-text darken-1">Informations </h5>
+            <ul>
+              <li><a class="brown-text darken-1" href="#!">Contact us </a></li>
+                <li><a class="brown-text darken-1" href="aPropos.html">About</a></li>
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+          </footer>
+
+
+      </footer>
+
+
+
+</body>
+
 
 </html>
