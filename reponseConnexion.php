@@ -10,8 +10,8 @@
         session_start();
         foreach ($dbh->query($query) as $row){
             $_SESSION["NOM_USER"] = $row[0];
-        }
-        header("Location: index.html");        
+        }     
+        header("Location:index.html");
     }
     else{//Mot de passe (et/ou login) incorrect : rejet de l'utilisateur
         header("Location: connexion.php");
