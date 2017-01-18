@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    /*session_start();
     if (isset($_SESSION["NOM_USER"])) 
     {
     echo "Bonjour ".$_SESSION["NOM_USER"];
@@ -7,8 +7,8 @@
     else
     {
     header("Location: connexion.php");
-    }
-
+    }*/
+    $i = 0;
     $search = $_POST['recherche'];
     // Paramètres de connexion
     $driver = 'sqlsrv';
@@ -23,7 +23,7 @@
     $requestMusician = "Select distinct Nom_Musicien, Prénom_Musicien, Musicien.Code_Musicien from Musicien inner join Composer on Musicien.Code_Musicien = Composer.Code_Musicien"
         . " inner join Oeuvre on Composer.Code_Oeuvre = Oeuvre.Code_Oeuvre where Nom_Musicien Like '" .$search ."%'";
     $requestWork = "Select Titre_Oeuvre, Code_Oeuvre from Oeuvre where Titre_Oeuvre Like '" .$search ."%'";
-    $requestRecording = "Select Titre from Enregistrement where Titre Like '" .$search ."%'";
+    $requestRecording = "Select Titre, Code_Morceau from Enregistrement where Titre Like '" .$search ."%'";
     
     echo '<h1> Musiciens dont le nom commence par ' . $search . ' : </h1>';
     foreach ($pdo->query($requestMusician) as $row) {
@@ -39,17 +39,17 @@
     echo "</a> <br>";
     }
     echo '<h1> Enregistrements dont le titre commence par ' . $search . ' : </h1>';
-    foreach ($pdo->query($requestRecording) as $row){
+    foreach ($pdo->query($requestRecording) as $row) {
     echo $row[utf8_decode('Titre')];
-    ?>
-    <html lang="fr">
-    <form method="post" action="achat.php">
-    <input name="Acheter" type="submit" value="Acheter">
-    <br>
-    </form>
-    </html>
-    <?php
-    }
+    echo '<audio controls="controls preload="none> <source src ="extrait.php?Code='
+    . $row['Code_Morceau'] . '"type="audio/mp3" />';
+    echo '<html lang="fr">';
+    echo '<form method="post" action="achat.php">';
+    echo '<input name="Acheter" type="submit" value="Acheter">';
+    echo '</form>';
+    echo '</html>';
+    $i++;
+}
     $pdo = null;
 ?>
 

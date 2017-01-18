@@ -17,16 +17,13 @@ $request = "Select Enregistrement.Titre, Enregistrement.Code_Morceau From Enregi
 echo " <h1> Enregistrement associé à cette oeuvre : </h1> ";
 foreach ($pdo->query($request) as $row) {
     echo $row[utf8_decode('Titre')];
-    ?>
-    <html lang="fr">
-    <form method="post" action="achat.php">
-    <input name="Acheter" type="submit" value="Acheter"> 
-    </form>
-    </html>
-    <?php
+    echo '<audio controls="controls preload="none> <source src ="extrait.php?Code='
+    . $row['Code_Morceau'] . '"type="audio/mp3" />';
+    echo '<form method="post" action="achat.php">';
+    echo '<input name="Acheter" type="submit" value="Acheter">';
+    echo '<br>';
     $i++;
 }
-
 if ($i == 1) {
     echo "Pas D'enregistrements";
 }
