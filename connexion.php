@@ -18,10 +18,12 @@
         <nav>
        <div class="nav-wrapper  grey lighten-1">
          <a href="#" class="brand-logo center brown-text darken-1">P'N'M</a>
-         <form method="post" action="reponseRecherche.php">
-      <div class="input-field">
-        <input id="search" type="search" required>
-        <label for="search">Search:<i class="material-icons"></label>
+
+         <div class="input-field">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+
       </div>
     </form>
    </nav>

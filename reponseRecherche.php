@@ -1,6 +1,7 @@
+
 <?php
     /*session_start();
-    if (isset($_SESSION["NOM_USER"])) 
+    if (isset($_SESSION["NOM_USER"]))
     {
     echo "Bonjour ".$_SESSION["NOM_USER"];
     }
@@ -24,9 +25,12 @@
         . " inner join Oeuvre on Composer.Code_Oeuvre = Oeuvre.Code_Oeuvre where Nom_Musicien Like '" .$search ."%'";
     $requestWork = "Select Titre_Oeuvre, Code_Oeuvre from Oeuvre where Titre_Oeuvre Like '" .$search ."%'";
     $requestRecording = "Select Titre, Code_Morceau from Enregistrement where Titre Like '" .$search ."%'";
-    
+
+
     echo '<h1> Musiciens dont le nom commence par ' . $search . ' : </h1>';
     foreach ($pdo->query($requestMusician) as $row) {
+    echo"<a class="carousel-item" href='oeuvre.php?Code=".$row['Code_Musicien']."'</a>";
+
     echo "<a href='oeuvre.php?Code=" . $row['Code_Musicien'] . "'>";
     echo $row[utf8_decode('Nom_Musicien')];
     echo "<img src='image.php?Code=" . $row['Code_Musicien'] . "'/>";
@@ -51,4 +55,3 @@
 echo "</ul>";
     $pdo = null;
 ?>
-
