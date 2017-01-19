@@ -15,15 +15,17 @@ $request = "Select Enregistrement.Titre, Enregistrement.Code_Morceau From Enregi
 	    	Inner join Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
             Where Oeuvre.Code_Oeuvre=" . $_GET['Code'];
 echo " <h1> Enregistrement associé à cette oeuvre : </h1> ";
+echo "<ul>";
 foreach ($pdo->query($request) as $row) {
+    echo "<li>";
     echo $row[utf8_decode('Titre')];
-    echo '<audio controls="controls preload="none> <source src ="extrait.php?Code='
-    . $row['Code_Morceau'] . '"type="audio/mp3" />';
+    echo "<audio preload=auto src='extrait.php?Code=" . $row['Code_Morceau'] . "' controls></audio>";
     echo '<form method="post" action="achat.php">';
     echo '<input name="Acheter" type="submit" value="Acheter">';
-    echo '<br>';
+    echo '</li>';
     $i++;
 }
+echo "</ul>";
 if ($i == 1) {
     echo "Pas D'enregistrements";
 }

@@ -39,17 +39,16 @@
     echo "</a> <br>";
     }
     echo '<h1> Enregistrements dont le titre commence par ' . $search . ' : </h1>';
+    echo "<ul>";
     foreach ($pdo->query($requestRecording) as $row) {
-    echo $row[utf8_decode('Titre')];
-    echo '<audio controls="controls preload="none> <source src ="extrait.php?Code='
-    . $row['Code_Morceau'] . '"type="audio/mp3" />';
-    echo '<html lang="fr">';
-    echo '<form method="post" action="achat.php">';
-    echo '<input name="Acheter" type="submit" value="Acheter">';
-    echo '</form>';
-    echo '</html>';
-    $i++;
-}
+        echo "<li>";
+        echo $row[utf8_decode('Titre')];
+        echo "<audio preload=auto src='extrait.php?Code=" . $row['Code_Morceau'] . "' controls></audio>";
+        echo '<form method="post" action="achat.php">';
+        echo '<input name="Acheter" type="submit" value="Acheter">';
+        echo '</li>';
+    }
+echo "</ul>";
     $pdo = null;
 ?>
 
