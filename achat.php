@@ -8,7 +8,9 @@
     {
     header("Location: connexion.php");
     }*/
-
-
+    $work = $_GET['Code'];
+    $array = $_SESSION['array'];
+    array_push($array, $work);
+    $_SESSION['array'] = $array;
 ?>
 

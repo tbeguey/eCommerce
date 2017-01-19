@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    /*session_start();
     if (isset($_SESSION["NOM_USER"])) 
     {
     echo "Bonjour ".$_SESSION["NOM_USER"];
@@ -7,7 +7,7 @@
     else
     {
     header("Location: connexion.php");
-    }
+    }*/
     $i = 0;
     $search = $_POST['recherche'];
     // Paramètres de connexion
@@ -29,7 +29,7 @@
                 join Composition_Oeuvre on Composition_Oeuvre.Code_Composition = Composition.Code_Composition
                 join Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
                 join Composer on Composer.Code_Oeuvre = Oeuvre.Code_Oeuvre
-                join Musicien on Musicien.Code_Musicien = Composer.Code_Musicien
+                join Musicien on Musicien.Code_Musicien = Composer.Code_Musicien 
                 where Nom_Musicien Like '" .$search ."%'";
     
     $requestWork = "Select DISTINCT Titre_Oeuvre, Album.Code_Album from Album
@@ -79,7 +79,9 @@
         echo $row[utf8_decode('Titre')];
         echo "<audio preload=auto src='extrait.php?Code=" . $row['Code_Morceau'] . "' controls></audio>";
         echo '<form method="post" action="achat.php">';
+        echo '<input type="hidden" name="Code" value=' .$row['Code_Morceau'] . '"></input>';
         echo '<input name="Acheter" type="submit" value="Ajouter au panier">';
+        echo '</form>';
         echo '</li>';
     }
     echo "</ul>";

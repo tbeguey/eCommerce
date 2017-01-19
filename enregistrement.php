@@ -27,6 +27,7 @@ foreach ($pdo->query($request) as $row) {
     echo "<audio preload=auto src='extrait.php?Code=" . $row['Code_Morceau'] . "' controls></audio>";
     echo '<form method="post" action="achat.php">';
     echo '<input name="Acheter" type="submit" value="Ajouter au panier">';
+    echo '</form>';
     echo '</li>';
     $i++;
 }
