@@ -79,7 +79,7 @@
 
 
 </main>
-<footer class="page-footer grey lighten-1">
+<footer class="page-footer cyan darken-3">
   <div class="container">
     <div class="row">
         <h5 class="center brown-text darken-1">A site created by Théo Beguey and Yamin Tricha </h5>
