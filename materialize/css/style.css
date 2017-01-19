@@ -2,7 +2,7 @@ body {
    display: flex;
    min-height: 100vh;
    flex-direction: column;
-   background-color: #bdbdbd;
+   background-color: #00838f ;
  }
 
  main {
@@ -10,16 +10,16 @@ body {
  }
 
 footer{
-  min-height:10vh;
+  min-height:3vh;
 }
 
 .parallax-container{
- width: 2;
+ width: 5;
 
 }
 form{
   color: #a1887f;
-  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/72/9d/77/729d772bf4ac64194477248b20190e6e.jpg");
+  background-image: url("http://www.wallpaperhdi.com/wp-content/uploads/2016/06/Material_Design_Wallpaper_Image_HD.jpg");
 }
 label{
   background-color: : #a1887f;

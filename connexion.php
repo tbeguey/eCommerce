@@ -33,22 +33,35 @@
 
 <main>
   <div class="parallax-container ">
-     <div class="parallax"><img src="materialize/parallax.jpg"></div>
+     <div class="parallax"><img src="materialize/parallux.jpg"></div>
    </div>
-   <div class="section grey lighten-1">
-     <div class="row container">
-       <div class="col s6"
 
-           <form method="post" action="reponseConnexion.php">
-       	Nom : <input name="Login" type="text" /><br/>
-      Mot de passe: <input name="Password" type="text" /><br/>
-       	<input name="Connect" type="submit" value="Connecter" />
-           </form>
-</div>
-     </div>
-   </div>
+
+
+
+  <form class="col s12" name="post" action="reponseConnexion.php">
+    <div class="input-field col s6">
+          <input name="Login" type="text" >
+          <label class="orange-text darken-1" for="last_name">Username</label>
+        </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="Password" type="password">
+        <label class="orange-text darken-1" for="password">Password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="Password" type="password">
+        <label class="orange-text darken-1" for="password ">Confirm password</label>
+      </div>
+    </div>
+    <input class="material-icons" name="Connect" type="submit" value="Connecter">
+    <?php header("Location:index2.html"); ?>
+  </form>
+
    <div class="parallax-container">
-     <div class="parallax"><img src="materialize/parallax.jpg"></div>
+     <div class="parallax"><img src="materialize/parallux.jpg"></div>
    </div>
 
 
