@@ -15,7 +15,7 @@
   <script type="text/javascript" src="materialize/js/dropdown.js"></script>
   <header>
     <nav>
-      <div class="nav-wrapper ">
+      <div class="nav-wrapper  grey lighten-1">
         <a href="#" class="brand-logo center brown-text darken-1">P'N'M</a>
         <form method="post" action="reponseRecherche.php">
 
@@ -34,16 +34,34 @@
     <div class="parallax-container ">
       <div class="parallax"><img src="materialize/parallux.jpg"></div>
     </div>
-    <div class="row container">
-      <div class="col s5 offset-s4">
-        <div class="section ">
-          <div class="row container center brown-text darken-1  ">
-            <h2 class="header">PNM</h2>
-            <a class="brown-text darken-1 ">Peace'N'Music is your reference when you want to buy your favorite's artist's lattest album ! Thanks to professionnals working on the site 24/7, we are proud to be number one on the music Domain on Internet ! </a>
+    <form  name="post" action="reponseConnexion.php">
+      <div class="input-field col s6">
+            <input name="nom" type="text" >
+            <label class="orange-text darken-1" for="last_name">Name</label>
           </div>
+          <div class="input-field col s6">
+                <input name="prenom" type="text" >
+                <label class="orange-text darken-1" for="last_name">Firstname</label>
+              </div>
+      <div class="input-field col s6">
+            <input name="Login" type="text" >
+            <label class="orange-text darken-1" for="last_name">Username</label>
+          </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="Password" type="password">
+          <label class="orange-text darken-1" for="password">Password</label>
         </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="Password" type="password">
+          <label class="orange-text darken-1" for="password ">Confirm password</label>
+        </div>
+      </div>
+      <input  name="Connect" type="submit" value="Connecter">
+      <?php header("Location:index2.html"); ?>
+    </form>
     <div class="parallax-container">
       <div class="parallax"><img src="materialize/parallux.jpg"></div>
     </div>
@@ -61,7 +79,7 @@
 
 
 </main>
-<footer class="page-footer grey lighten-1">
+<footer class="page-footer cyan darken-3">
   <div class="container">
     <div class="row">
         <h5 class="center brown-text darken-1">A site created by Théo Beguey and Yamin Tricha </h5>
@@ -77,4 +95,3 @@
 </footer>
 </body>
 </html>
-AP

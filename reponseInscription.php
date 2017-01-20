@@ -13,9 +13,8 @@ if($password == $confirm){
     ':log' => $login,
     ':pass' => $password));
 echo "Insertion effectué";
-echo "<br>";
 }
 else{
-	echo "Mot de passe différent";
+    echo "Mot de passe différent";
 }
 ?>

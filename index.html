@@ -7,25 +7,36 @@
 </head>
 <body>
 
-
+ <h1> Inscription </h1>
+ <form method="post" action="reponseInscription.php">
+     Nom : <input name="nom" type="text" /><br/>
+     Prénom : <input name="prenom" type="text" /><br/>
+     Login : <input name="login" type="text" /><br/>
+     Mot de passe : <input name="password" type="password" /><br/>
+     Confirmer mot de passe : <input name="confirm" type="password" /><br/>
+    <input name="Connexion" type="submit" value="S'inscrire">
+ </form>
 
  <h1> Connexion </h1>
- <form method="post" action="connexion.php">
-    <input name="Connexion" type="submit" value="Se connecter">
- </form>
+    <form method="post" action="connexion.php">
+	<input name="Connect" type="submit" value="Se connecter" />
+    </form>
 
   <h1> Déconnexion </h1>
  <form method="post" action="deconnexion.php">
     <input name="Déconnexion" type="submit" value="Se déconnecter">
  </form>
 
-<h1> Recherche </h1>
+<h1> RechercheRa </h1>
   <form method="post" action="reponseRecherche.php">
     <label id="Label1">Rechercher</label><input name="recherche" type="text"><br>
     <input name="OK" type="submit" value="OK">
   </form>
 
 <h1> Mon panier </h1>
+  <form method="post" action="panier.php">
+    <input name="OK" type="submit" value="Acheter votre panier">
+  </form>
 
 <a href="aPropos.html"> A propos </a>
 

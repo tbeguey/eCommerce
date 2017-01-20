@@ -1,8 +1,19 @@
 <?php
-
+    /*session_start();
+    if (isset($_SESSION["NOM_USER"])) 
+    {
+    echo "Bonjour ".$_SESSION["NOM_USER"];
+    }
+    else
+    {
+    header("Location: connexion.php");
+    }*/
 $pdo = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD");
 $stmt = $pdo->prepare("SELECT Extrait FROM Enregistrement WHERE Code_Morceau=?");
 $stmt->execute(array($_GET['Code']));
-$sound = $row['Extrait'];
+$stmt->bindColumn(1, $data, PDO::PARAM_LOB);
+$stmt->fetch(PDO::FETCH_BOUND);
+$sound = pack("H*", $data);
+header("Content-Type: audio/mpeg");
 echo $sound;
-?> 
+?>
