@@ -1,13 +1,9 @@
 <?php
-    /*session_start();
-    if (isset($_SESSION["NOM_USER"]))
-    {
-    echo "Bonjour ".$_SESSION["NOM_USER"];
-    }
-    else
-    {
+    session_start();
+    if (!isset($_SESSION["NOM_USER"])){
     header("Location: connexion.php");
-    }*/
+    }
+
     $i = 0;
     $search = $_POST['recherche'];
     // Paramètres de connexion
@@ -47,7 +43,7 @@
             join Album on Disque.Code_Album = Album.Code_Album
             where Titre_Album Like '" .$search ."%'";
 
-    $requestRecording = "Select DISTINCT Titre, Code_Morceau from Enregistrement where Titre Like '" .$search ."%'";
+    $requestRecording = "Select DISTINCT Titre, Code_Morceau, Durée from Enregistrement where Titre Like '" .$search ."%'";
 
     echo '<h1> Musiciens dont le nom commence par ' . $search . ' : </h1>';
     foreach ($pdo->query($requestMusician) as $row) {
@@ -77,6 +73,7 @@
     foreach ($pdo->query($requestRecording) as $row) {
         echo "<li>";
         echo $row[utf8_decode('Titre')];
+        echo $row[utf8_decode('Durée')];
         echo "<audio preload=auto src='extrait.php?Code=" . $row['Code_Morceau'] . "' controls></audio>";
         echo '<form method="post" action="achat.php">';
         echo '<input type="hidden" name="Code" value=' .$row['Code_Morceau'] . '"></input>';

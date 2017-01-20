@@ -50,14 +50,7 @@
         <label class="orange-text darken-1" for="password">Password</label>
       </div>
     </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input name="Password" type="password">
-        <label class="orange-text darken-1" for="password ">Confirm password</label>
-      </div>
-    </div>
     <input class="material-icons" name="Connect" type="submit" value="Connecter">
-    <?php header("Location:index2.html"); ?>
   </form>
 
    <div class="parallax-container">
