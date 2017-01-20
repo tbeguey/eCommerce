@@ -21,7 +21,7 @@
     // Connexion PDO
     $pdo = new PDO($pdodsn, $user, $password);
 
-  /*  $requestMusician = "Select DISTINCT Nom_Musicien, Prénom_Musicien, Musicien.Code_Musicien, Album.Code_Album from Album
+    $requestMusician = "Select DISTINCT Nom_Musicien, Prénom_Musicien, Musicien.Code_Musicien, Album.Code_Album from Album
                 join Disque on Album.Code_Album = Disque.Code_Album
                 join Composition_Disque on Composition_Disque.Code_Disque = Disque.Code_Disque
                 join Enregistrement on Enregistrement.Code_Morceau = Composition_Disque.Code_Morceau
@@ -47,7 +47,7 @@
             join Album on Disque.Code_Album = Album.Code_Album
             where Titre_Album Like '" .$search ."%'";
 
-    $requestRecording = "Select DISTINCT Titre, Code_Morceau from Enregistrement where Titre Like '" .$search ."%'";*/
+    $requestRecording = "Select DISTINCT Titre, Code_Morceau from Enregistrement where Titre Like '" .$search ."%'";
 
     echo '<h1> Musiciens dont le nom commence par ' . $search . ' : </h1>';
     foreach ($pdo->query($requestMusician) as $row) {
