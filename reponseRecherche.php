@@ -75,7 +75,7 @@
         echo $row[utf8_decode('Titre')];
         echo $row[utf8_decode('Durée')];
         echo "<audio preload=auto src='extrait.php?Code=" . $row['Code_Morceau'] . "' controls></audio>";
-        echo '<form method="post" action="achat.php">';
+        echo '<form method="post" action="achat.php?Code=' .$row['Code_Morceau'] . '">';
         echo '<input type="hidden" name="Code" value=' .$row['Code_Morceau'] . '"></input>';
         echo '<input name="Acheter" type="submit" value="Ajouter au panier">';
         echo '</form>';
