@@ -6,6 +6,6 @@
     var_dump($_SESSION['array']);
     array_push($_SESSION['array'], $_GET['Code']);
     var_dump($_SESSION['array']);
-    header("Location: index.html");
+    //header("Location: index.html");
 ?>
 
