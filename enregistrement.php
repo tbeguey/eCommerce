@@ -26,7 +26,7 @@ foreach ($pdo->query($request) as $row) {
     echo $row[utf8_decode('Titre')];
     echo $row[utf8_decode('Durée')];
     echo "<audio preload=auto src='extrait.php?Code=" . $row['Code_Morceau'] . "' controls></audio>";
-    echo '<form method="post" action="achat.php?Code=' .$row['Code_Morceau'] . '">';
+    echo '<form method="post" action="ajouterPanier.php?Code=' .$row['Code_Morceau'] . '">';
     echo '<input name="Acheter" type="submit" value="Ajouter au panier">';
     echo '</form>';
     echo '</li>';
