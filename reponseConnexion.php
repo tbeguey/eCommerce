@@ -1,6 +1,8 @@
 <?php
     $Password = $_REQUEST["Password"];
     $Login=$_REQUEST["Login"];
+            var_dump($Password);
+        var_dump($Login);
     $dbh = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD");
     // recherche si l'utilisateur est enregistré et possède le bon mot de passe
     $queryCount = "Select Count(*) from Abonné where Login ='".$Login."' and Password ='".$Password."'";
@@ -14,12 +16,11 @@
                 $_SESSION['array'] = array();
             }
         }
-        var_dump($Password);
-        var_dump($Login);
+
         //header("Location:index2.html");
     }
-    else{//Mot de passe (et/ou login) incorrect : rejet de l'utilisateur
+    /*else{//Mot de passe (et/ou login) incorrect : rejet de l'utilisateur
         header("Location: connexion.php");
-    }
+    }*/
     $dbh = null;
 ?>
