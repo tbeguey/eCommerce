@@ -59,7 +59,7 @@
           <label class="orange-text darken-1" for="password ">Confirm password</label>
         </div>
       </div>
-      <input  name="Connect" type="submit" value="Connecter">
+      <input  name="Connect" type="submit" value="Sign up">
 
     </form>
     <div class="parallax-container">
