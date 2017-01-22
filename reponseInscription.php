@@ -12,7 +12,8 @@
     	':prenom' => $prenom,
     	':log' => $login,
     	':pass' => $password));
-    	header("Location: connexion.php");
+    	header("Location: reponseConnexion.php?Login=". $login .
+    	 "&amp;Password=" . $password);
 	}
 	else{
     	header("Location : Inscription.php");
