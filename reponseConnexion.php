@@ -11,7 +11,6 @@
         foreach ($dbh->query($query) as $row){
             $_SESSION["NOM_USER"] = $row[0];
         }
-        $_SESSION['array'];
         header("Location:index.html");
     }
     else{//Mot de passe (et/ou login) incorrect : rejet de l'utilisateur
