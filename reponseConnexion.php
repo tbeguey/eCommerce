@@ -17,10 +17,10 @@
             }
         }
 
-        //header("Location:index2.html");
+        header("Location:index2.html");
     }
-    /*else{//Mot de passe (et/ou login) incorrect : rejet de l'utilisateur
+    else{//Mot de passe (et/ou login) incorrect : rejet de l'utilisateur
         header("Location: connexion.php");
-    }*/
+    }
     $dbh = null;
 ?>
