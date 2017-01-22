@@ -14,7 +14,9 @@
                 $_SESSION['array'] = array();
             }
         }
-        header("Location:index2.html");
+        var_dump($Password);
+        var_dump($Login);
+        //header("Location:index2.html");
     }
     else{//Mot de passe (et/ou login) incorrect : rejet de l'utilisateur
         header("Location: connexion.php");
