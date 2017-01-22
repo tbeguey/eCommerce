@@ -6,6 +6,7 @@
     else{
       $connected = false;
     }
+    var_dump($connected);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -61,6 +62,7 @@
     </a>
     <ul>
       <?php
+          var_dump($connected);
       if($connected){
         echo'<li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Authentification"><a href="connexion.php"><i class="material-icons brown-text darken-1">input</i></a></li>';
       echo'<li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Access to your cart"><a href="index2.html"><i class="material-icons brown-text darken-1">shopping_cart</i></a></li>';
