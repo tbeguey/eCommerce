@@ -35,10 +35,10 @@
 
   <main>
     <?php
-      //  session_start();
-      //  if (!isset($_SESSION["NOM_USER"])){
-      //  header("Location: connexion.php");
-      //  }
+      session_start();
+       if (!isset($_SESSION["NOM_USER"])){
+        header("Location: connexion.php");
+      }
 
         $i = 0;
         $search = $_POST['recherche'];
@@ -119,8 +119,8 @@ echo "</div>";
 
   //   echo "<li class'collection-item'>".$row[utf8_decode('Titre')]."</li>";
   //    echo "<li>".$row[utf8_decode('Durée')]."</li>";
-  echo "<audio autoplay='autoplay' src='Juicy.mp3' controls='controls'>Your browser does not support the audio element.</audio>";
- //  echo "<audio preload=auto class='materialboxed' width='650' src='extrait.php?.Code=" .$row['Code_Morceau']."'</audio>";
+//  echo "<audio  src='Juicy.mp3' controls='controls'>Your browser does not support the audio element.</audio>";
+  echo "<li><audio preload=auto class='materialboxed' width='650' src='extrait.php?.Code=" .$row['Code_Morceau']."'</audio></li>";
      //echo"<audio class='materialboxed' width='600' src='extrait.php?Code=" .$row['Code_Morceau']">";
   //  echo  "<audio id='audio_core' autoplay='autoplay' <source src='extrait.php?.Code" .$row['Code_Morceau']." type='audio/mp3'>Your browser does not support the audio element.</audio>";
 
