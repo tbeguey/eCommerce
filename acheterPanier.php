@@ -22,9 +22,13 @@
                 $pdo->exec($request);
             }
         }
-    }
     unset($_SESSION['array']);
+    if(!isset(=_SESSION['array'])){
+        $_SESSION['array'] = array();
+    }
     var_dump($_SESSION['array']);
+    }
+
     //header("Location: index.html");
 $pdo = null;
 ?>

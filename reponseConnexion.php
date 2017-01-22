@@ -10,7 +10,9 @@
         session_start();
         foreach ($dbh->query($query) as $row){
             $_SESSION["NOM_USER"] = $row[0];
-            $_SESSION['array'] = array();
+            if(!isset($_SESSION['array'])){
+                $_SESSION['array'] = array();
+            }
         }
         header("Location:index.html");
     }
