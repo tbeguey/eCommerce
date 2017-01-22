@@ -13,7 +13,7 @@
     	':log' => $login,
     	':pass' => $password));
     	header("Location: reponseConnexion.php?Login=". $login .
-    	 "&amp;Password=" . $password);
+    	 "&Password=" . $password);
 	}
 	else{
     	header("Location : Inscription.php");
