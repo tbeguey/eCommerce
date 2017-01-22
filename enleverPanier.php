@@ -7,7 +7,6 @@
     	$key = array_search($_GET['Code'], $_SESSION['array']);
     	unset($_SESSION['array'][$key]));
 		$_SESSION['array'] = array_values($_SESSION['array']);
-		var_dump($_SESSION['array']);
     }
 
     header("Location: panier.php");

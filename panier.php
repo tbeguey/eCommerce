@@ -25,7 +25,7 @@
                 echo '<br>';
                 echo $row[utf8_decode('Prix')];
                 echo '<br>';
-                echo '<form method="post" action="enleverPanier.php?Code='. $row['Code_Morceau'] . '>';
+                echo '<form method="post" action="enleverPanier.php?Code='. $row['Code_Morceau'] . '">';
                 echo '<input name="OK" type="submit" value="Enlever du panier">'; // un petit logo avec une infobulle ?
                 echo '</form>';
                 echo '<br>';
