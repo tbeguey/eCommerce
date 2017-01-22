@@ -60,7 +60,7 @@
         </div>
       </div>
       <input  name="Connect" type="submit" value="Connecter">
-      <?php header("Location:index2.html"); ?>
+
     </form>
     <div class="parallax-container">
       <div class="parallax"><img src="materialize/parallux.jpg"></div>

@@ -3,7 +3,6 @@
 <head>
   <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta charset="utf-8">
   <title>Commerce - Tricha - Beguey</title>
 </head>
@@ -11,8 +10,6 @@
 <body>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-  <script type="text/javascript" src="materialize/js/parallax.js"></script>
-  <script type="text/javascript" src="materialize/js/dropdown.js"></script>
   <header>
     <nav>
       <div class="nav-wrapper ">
@@ -80,16 +77,64 @@
 
         $requestRecording = "Select DISTINCT Titre, Code_Morceau, Durée from Enregistrement where Titre Like '" .$search ."%'";
 
-  echo  "<div class='carousel'>";
-  //echo '<h1> Musiciens dont le nom commence par ' . $search . ' : </h1>';
+  echo  "<div class='carousel brown-text darken-4'>";
+  echo "<a class='grey-text  lighten-1'> Musiciens dont le nom commence par '  $search  ' : </a>";
   foreach ($pdo->query($requestMusician) as $row) {
   echo "<a class='carousel-item' href='album.php?Code=" . $row['Code_Album'] . "'><img src='image.php?Code=" . $row['Code_Musicien'] . "'/>";
-  echo "<p class='brown-text darken2'>".$row[utf8_decode('Nom_Musicien')]."</p>";
-
-
+  echo "<p>".$row[utf8_decode('Nom_Musicien')]."</p>";
   echo "</a> ";
-  }?>
-   </div>
+  }
+  echo "</div>";
+  echo  "<div class='carousel brown-text darken-4''>";
+  echo "<a class='grey-text  lighten-2'> Albums dont le nom commence par '  $search  ' : </a>";
+  foreach ($pdo->query($requestAlbum) as $row) {
+  echo "<a class='carousel-item' href='enregistrement.php?Code=" . $row['Code_Morceau'] . "'><img src='imageAlbum.php?Code=" . $row['Code_Album'] . "'/>";
+  echo "<p>".$row[utf8_decode('Titre_Album')]."</p>";
+  echo "</a> ";
+  }
+  echo "</div>";
+
+  echo "<a class='grey-text  lighten-2 '> Oeuvres dont le nom commence par '  $search  ' : </a>";
+  foreach ($pdo->query($requestWork) as $row) {
+    echo "<div class='collection grey lighten-2 '>";
+
+    echo "<a href='album.php?Code=" . $row['Code_Album'] . "class='collection-item active brown-text darken-3 ' >" .$row[utf8_decode('Titre_Oeuvre')] ."</a>";
+
+  //echo "<a class='carousel-item' href='album.php?Code=" . $row['Code_Album'] . "'><img src='album.php?Code=" . $row['Code_Album'] . "'/>";
+  //echo "<p>".$row[utf8_decode('Titre_Oeuvre')]."</p>";
+//echo "</a> ";
+echo "</br>";
+echo "</div>";
+
+  }
+
+  echo '<h1> Enregistrements dont le titre commence par ' . $search . ' : </h1>';
+
+
+
+ foreach ($pdo->query($requestRecording) as $row) {
+//   echo "<ul class='collection grey lighten-2'>";
+
+  //   echo "<li class'collection-item'>".$row[utf8_decode('Titre')]."</li>";
+  //    echo "<li>".$row[utf8_decode('Durée')]."</li>";
+  echo "<audio autoplay='autoplay' src='Juicy.mp3' controls='controls'>Your browser does not support the audio element.</audio>";
+ //  echo "<audio preload=auto class='materialboxed' width='650' src='extrait.php?.Code=" .$row['Code_Morceau']."'</audio>";
+     //echo"<audio class='materialboxed' width='600' src='extrait.php?Code=" .$row['Code_Morceau']">";
+  //  echo  "<audio id='audio_core' autoplay='autoplay' <source src='extrait.php?.Code" .$row['Code_Morceau']." type='audio/mp3'>Your browser does not support the audio element.</audio>";
+
+  //   echo '<form method="post" action="ajouterPanier.php?Code=' .$row['Code_Morceau'] . '">';
+  //   echo '<input type="hidden" name="Code" value=' .$row['Code_Morceau'] . '"></input>';
+  //   echo '<input name="Acheter" type="submit" value="Ajouter au panier">';
+  //   echo '</form>';
+     echo '</li>';
+     echo "</ul>";
+
+ }
+
+ $pdo=null;
+
+  ?>
+
   </main>
 <footer class="page-footer grey lighten-1">
   <div class="container">
