@@ -12,7 +12,6 @@
     $pdodsn = "$driver:Server=$host;Database=$nomDb";
     // Connexion PDO
     $pdo = new PDO($pdodsn, $user, $password);
-    var_dump($_SESSION['array']);
     if(!empty($_SESSION['array'])){
         foreach ($_SESSION['array'] as $code){
             $request = "Select Titre, Durée, Prix, Code_Morceau from Enregistrement "
