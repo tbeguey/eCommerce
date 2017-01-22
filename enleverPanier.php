@@ -5,7 +5,7 @@
     }
     if(isset($_SESSION['array'])){
     	$key = array_search($_GET['Code'], $_SESSION['array']);
-    	unset($_SESSION['array'][$key]));
+    	unset($_SESSION['array'][$key]);
 		$_SESSION['array'] = array_values($_SESSION['array']);
     }
 
