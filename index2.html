@@ -1,13 +1,3 @@
-<?php 
-    session_start();
-    if (!isset($_SESSION["NOM_USER"])){
-      $connected = true;
-    }
-    else{
-      $connected = false;
-    }
-    var_dump($connected);
-?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -26,7 +16,7 @@
   <header>
     <nav>
       <div class="nav-wrapper ">
-        <a href="#" class="brand-logo center brown-text darken-1">'N'M</a>
+        <a href="#" class="brand-logo center brown-text darken-1">P'N'M</a>
         <form method="post" action="reponseRecherche.php">
 
         <div class="input-field">
@@ -61,16 +51,12 @@
       <a class="btn-floating btn-large waves-effect waves-light grey lighten-1 "><i class="material-icons brown-text darken-1 grey lighten-1">toc</i></a>
     </a>
     <ul>
-      <?php
-          var_dump($connected);
-      if($connected){
-        echo'<li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Authentification"><a href="connexion.php"><i class="material-icons brown-text darken-1">input</i></a></li>';
-      echo'<li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Access to your cart"><a href="index2.html"><i class="material-icons brown-text darken-1">shopping_cart</i></a></li>';
-      echo'<li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Subscription"><a href="Inscription.php"><i class="material-icons brown-text darken-1">mode_edit</i></a></li>';
-      echo'<li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="About our site"><a href="aPropos.html"><i class="material-icons brown-text darken-1">info_outline</i></a></li>';
-      echo'<li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Go back to menu"><a href="index2.html"><i class="material-icons brown-text darken-1">view_headline</i></a></li>';
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Authentification"><a href="connexion.php"><i class="material-icons brown-text darken-1">input</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Access to your cart"><a href="panier.php"><i class="material-icons brown-text darken-1">shopping_cart</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Subscription"><a href="Inscription.php"><i class="material-icons brown-text darken-1">mode_edit</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="About our site"><a href="aPropos.html"><i class="material-icons brown-text darken-1">info_outline</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Go back to menu"><a href="index2.html"><i class="material-icons brown-text darken-1">view_headline</i></a></li>
       }
-        ?>
     </ul>
   </div>
 
