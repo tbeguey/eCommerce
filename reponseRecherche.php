@@ -72,7 +72,7 @@
       join Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
       where Titre_Oeuvre Like '%" .$search ."%'";
 
-      $requestAlbum = "Select DISTINCT Titre_Album, Album.Code_Album, Enregistrement.Code_Morceau from Enregistrement
+      $requestAlbum = "Select DISTINCT Titre_Album, Album.Code_Album, Enregistrement.Code_Morceau, ASIN from Enregistrement
       join Composition_Disque on Composition_Disque.Code_Morceau = Enregistrement.Code_Morceau
       join Disque on Disque.Code_Disque = Composition_Disque.Code_Disque
       join Album on Disque.Code_Album = Album.Code_Album
@@ -96,6 +96,9 @@
       echo "<a class='brown-text  darken-2'> Albums dont le nom commence par '  $search  ' : </a>";
       foreach ($pdo->query($requestAlbum) as $row) {
         echo "<a class='carousel-item active' href='enregistrement.php?Code=" . $row['Code_Morceau'] . "'><img src='imageAlbum.php?Code=" . $row['Code_Album'] . "'/>";
+        echo '<form  name="post" action="amazon.php?Code=' . $row['ASIN'] . '">';
+        echo '<input class="material-icons" name="Connect" type="submit" value="Details">';
+        echo '</form>';
         echo "<p>".$row[utf8_decode('Titre_Album')]."</p>";
         echo "</a> ";
       }
@@ -127,7 +130,7 @@
         echo "<li class'collection-item'>".$row[utf8_decode('Titre')]."  durée : ";
         echo $row[utf8_decode('Durée')]."</li>";
         //echo "<audio preload=auto class='materialboxed' witdh='650'  src='Juicy.mp3' controls='controls'>Your browser does not support the audio element.</audio>";
-        //echo "<li><audio preload=auto class='materialboxed' width='650' src='extrait.php?.Code=" .$row['Code_Morceau']."'</audio></li>";
+        //echo "<li><audio preload=auto width='650' src='extrait.php?.Code=" .$row['Code_Morceau']."'</audio></li>";
         //echo"<audio class='materialboxed' width='600' src='extrait.php?Code=" .$row['Code_Morceau']">";
         echo  "<audio id='audio_core' autoplay='autoplay' <source src='extrait.php?.Code" .$row['Code_Morceau']." type='audio/mp3'>Your browser does not support the audio element.</audio>";
         echo "<form method='post' action='ajouterPanier.php?Code=" .$row['Code_Morceau'] . ">";

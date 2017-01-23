@@ -4,14 +4,14 @@
     const Aws_SECRET = "78w4hgy7IdxnFnQss895up5r4ot+V9sBLuijSzEE"; //Secret
     const associateTag="ecommerce0542-21"; // AssociateTag
     $client = new AmazonECS(Aws_ID, Aws_SECRET, 'FR', associateTag);
-    $category = $_POST["Category"];
-    $title = $_POST['Titre'];
-    $mode = $_POST['Mode'];
-    if($mode == 'ASIN')
-    {
-        $response = $client->responseGroup('Large')->lookup($title);
-        $items = $response["Items"];
-        $it = $items["Item"];
-        displayItem($it);
+    $code = $_GET['ASIN'];
+    $response = $client->responseGroup('Large')->lookup($code);
+    
+    if(isset($response->Items->Item->ItemAttributes->ListPrice->FormattedPrice)){
+        $prix = $response->Items->Item->ItemAttributes->ListPrice->FormattedPrice;
     }
+    else{
+        $prix = 'Indisponible';
+    }
+    echo 'Prix : ' . $prix;
 ?>
