@@ -34,38 +34,35 @@
       <div class="parallax-container ">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
       </div>
-      <div class="row container">
-        <div class="col s5 offset-s4">
-          <div class="section ">
-            <form  name="post" action="reponseInscription.php">
-              <div class="input-field col s6">
-                    <input name="nom" type="text" >
-                    <label class="orange-text darken-1" for="last_name">Name</label>
-                  </div>
-                  <div class="input-field col s6">
-                        <input name="prenom" type="text" >
-                        <label class="orange-text darken-1" for="last_name">Firstname</label>
-                      </div>
-              <div class="input-field col s6">
-                    <input name="Login" type="text" >
-                    <label class="orange-text darken-1" for="last_name">Username</label>
-                  </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input name="Password" type="password">
-                  <label class="orange-text darken-1" for="password">Password</label>
-                </div>
+      <div class="col s5 offset-s4">
+        <div class="section ">
+          <form  name="post" action="reponseInscription.php">
+            <div class="input-field col s6">
+              <input name="nom" type="text" >
+              <label class="orange-text darken-1" for="last_name">Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input name="prenom" type="text" >
+              <label class="orange-text darken-1" for="last_name">Firstname</label>
+            </div>
+            <div class="input-field col s6">
+              <input name="Login" type="text" >
+              <label class="orange-text darken-1" for="last_name">Username</label>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input name="Password" type="password">
+                <label class="orange-text darken-1" for="password">Password</label>
               </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input name="Password" type="password">
-                  <label class="orange-text darken-1" for="password ">Confirm password</label>
-                </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input name="Password" type="password">
+                <label class="orange-text darken-1" for="password ">Confirm password</label>
               </div>
-              <input  name="Connect" type="submit" value="Sign up">
-
-            </form>
-          </div>
+            </div>
+            <input  name="Connect" type="submit" value="Sign up">
+          </form>
         </div>
       </div>
       <div class="parallax-container">
