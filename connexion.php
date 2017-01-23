@@ -33,6 +33,7 @@
       <div class="parallax-container ">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
       </div>
+        
       <form class="col s12" name="post" action="reponseConnexion.php">
         <div class="input-field col s6">
           <input name="Login" type="text" >
@@ -46,6 +47,7 @@
         </div>
         <input class="material-icons" name="Connect" type="submit" value="Sign in">
       </form>
+        
       <div class="parallax-container">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
       </div>

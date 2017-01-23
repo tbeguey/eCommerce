@@ -16,7 +16,7 @@
   <header>
     <nav>
       <div class="nav-wrapper ">
-        <a href="#" class="brand-logo center brown-text darken-1">P'N'M</a>
+        <a href="#" class="brand-logo center brown-text darken-1">'N'M</a>
         <form method="post" action="reponseRecherche.php">
 
           <div class="input-field">
@@ -128,10 +128,7 @@
         echo "<ul class='collection  blue-grey lighten-2'>";
         echo "<li class'collection-item'>".$row[utf8_decode('Titre')]."  durée : ";
         echo $row[utf8_decode('Durée')]."</li>";
-        //echo "<audio preload=auto class='materialboxed' witdh='650'  src='Juicy.mp3' controls='controls'>Your browser does not support the audio element.</audio>";
-        //echo "<li><audio preload=auto width='650' src='extrait.php?.Code=" .$row['Code_Morceau']."'</audio></li>";
-        //echo"<audio class='materialboxed' width='600' src='extrait.php?Code=" .$row['Code_Morceau']">";
-        echo  "<audio id='audio_core' autoplay='autoplay' <source src='extrait.php?.Code" .$row['Code_Morceau']." type='audio/mp3'>Your browser does not support the audio element.</audio>";
+        echo "<li><audio preload=auto src='extrait.php?.Code=" .$row['Code_Morceau']."'</audio></li>";
         echo "<form method='post' action='ajouterPanier.php?Code=" .$row['Code_Morceau'] . ">";
         echo "<input type='hidden' name='Code' value='" .$row['Code_Morceau'] . "'></input>";
         echo "<input name='Acheter' type='submit' value='Ajouter au panier'>";
