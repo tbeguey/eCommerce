@@ -80,20 +80,20 @@
 
       $requestRecording = "Select DISTINCT Titre, Code_Morceau, Durée from Enregistrement where Titre Like '" .$search ."%'";
 
-      echo  "<div class='carousel brown-text darken-4  deep-orange lighten-3'>";
-      echo "<a class='grey-text  lighten-1'> Musiciens dont le nom commence par '  $search  ' : </a>";
+      echo  "<div class='carousel brown-text darken-4  blue-grey lighten-2'>";
+      echo "<a class='brown-text  darken-2'> Musiciens dont le nom commence par '  $search  ' : </a>";
       foreach ($pdo->query($requestMusician) as $row) {
-        echo "<a class='carousel-item active  deep-orange lighten-3' href='album.php?Code=" . $row['Code_Album'] . "'><img src='image.php?Code=" . $row['Code_Musicien'] . "'/>";
+        echo "<a class='carousel-item active  blue-grey lighten-2' href='album.php?Code=" . $row['Code_Album'] . "'><img src='image.php?Code=" . $row['Code_Musicien'] . "'/>";
         echo "<p>".$row[utf8_decode('Nom_Musicien')]."</p>";
         echo "</a> ";
       }
       echo "</div>";
-      echo  "<div class='parallax-container'>"
-      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>"
-      echo  "</div>"
+      echo  "<div class='parallax-container'>";
+      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>";
+      echo  "</div>";
 
-      echo  "<div class='carousel brown-text darken-4  deep-orange lighten-3'>";
-      echo "<a class='grey-text  lighten-2'> Albums dont le nom commence par '  $search  ' : </a>";
+      echo  "<div class='carousel brown-text darken-4  blue-grey lighten-2'>";
+      echo "<a class='brown-text  darken-2'> Albums dont le nom commence par '  $search  ' : </a>";
       foreach ($pdo->query($requestAlbum) as $row) {
         echo "<a class='carousel-item active' href='enregistrement.php?Code=" . $row['Code_Morceau'] . "'><img src='imageAlbum.php?Code=" . $row['Code_Album'] . "'/>";
         echo "<p>".$row[utf8_decode('Titre_Album')]."</p>";
@@ -103,36 +103,37 @@
 
 
       echo "</div>";
-      echo  "<div class='parallax-container'>"
-      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>"
-      echo  "</div>"
+      echo  "<div class='parallax-container'>";
+      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>";
+      echo  "</div>";
 
-      echo "<a class='grey-text  lighten-2 '> Oeuvres dont le nom commence par '  $search  ' : </a>";
+      echo "<a class='brown-text  darken-2'> Oeuvres dont le nom commence par '  $search  ' : </a>";
       foreach ($pdo->query($requestWork) as $row) {
-        echo "<div class='collection  deep-orange lighten-3'>";
-        echo "<a href='album.php?Code=" . $row['Code_Album'] . "class='collection-item active brown-text darken-3 ' >" .$row[utf8_decode('Titre_Oeuvre')] ."</a>";
-        //echo "<a class='carousel-item' href='album.php?Code=" . $row['Code_Album'] . "'><img src='album.php?Code=" . $row['Code_Album'] . "'/>";
+        echo "<div class='collection brown-text darken-3 blue-grey lighten-2'>";
+        echo "<a class='collection-item  ' >" .$row[utf8_decode('Titre_Oeuvre')] ."</a>";
+        echo "<a class='carousel-item' href='album.php?Code=" . $row['Code_Album'] . "'><img src='album.php?Code=" . $row['Code_Album'] . "'/>";
         echo "</br>";
         echo "</div>";
       }
 
       echo "</div>";
-      echo  "<div class='parallax-container'>"
-      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>"
-      echo  "</div>"
-      echo '<h1> Enregistrements dont le titre commence par ' . $search . ' : </h1>';
+      echo  "<div class='parallax-container'>";
+      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>";
+      echo  "</div>";
+
+      echo "<a class='brown-text  darken-2'> Enregistrements dont le nom commence par '  $search  ' : </a>";
       foreach ($pdo->query($requestRecording) as $row) {
-        echo "<ul class='collection grey lighten-2'>";
-        //   echo "<li class'collection-item'>".$row[utf8_decode('Titre')]."</li>";
-        //    echo "<li>".$row[utf8_decode('Durée')]."</li>";
-        echo "<audio preload=auto class='materialboxed' witdh='650'  src='Juicy.mp3' controls='controls'>Your browser does not support the audio element.</audio>";
-        //  echo "<li><audio preload=auto class='materialboxed' width='650' src='extrait.php?.Code=" .$row['Code_Morceau']."'</audio></li>";
+        echo "<ul class='collection  blue-grey lighten-2'>";
+        echo "<li class'collection-item'>".$row[utf8_decode('Titre')]."  durée : ";
+        echo $row[utf8_decode('Durée')]."</li>";
+        //echo "<audio preload=auto class='materialboxed' witdh='650'  src='Juicy.mp3' controls='controls'>Your browser does not support the audio element.</audio>";
+        //echo "<li><audio preload=auto class='materialboxed' width='650' src='extrait.php?.Code=" .$row['Code_Morceau']."'</audio></li>";
         //echo"<audio class='materialboxed' width='600' src='extrait.php?Code=" .$row['Code_Morceau']">";
-        //  echo  "<audio id='audio_core' autoplay='autoplay' <source src='extrait.php?.Code" .$row['Code_Morceau']." type='audio/mp3'>Your browser does not support the audio element.</audio>";
-        //   echo '<form method="post" action="ajouterPanier.php?Code=' .$row['Code_Morceau'] . '">';
-        //   echo '<input type="hidden" name="Code" value=' .$row['Code_Morceau'] . '"></input>';
-        //   echo '<input name="Acheter" type="submit" value="Ajouter au panier">';
-        //   echo '</form>';
+        echo  "<audio id='audio_core' autoplay='autoplay' <source src='extrait.php?.Code" .$row['Code_Morceau']." type='audio/mp3'>Your browser does not support the audio element.</audio>";
+        echo "<form method='post' action='ajouterPanier.php?Code=" .$row['Code_Morceau'] . ">";
+        echo "<input type='hidden' name='Code' value=" .$row['Code_Morceau'] . "></input>";
+        echo "<input name='Acheter' type='submit' value='Ajouter au panier'>";
+        echo "</form>";
         echo "</ul>";
       }
       $pdo=null;
