@@ -94,6 +94,8 @@
     echo "<a href='enregistrement.php?Code=" . $row['Code_Morceau'] . "'>";
     echo $row[utf8_decode('Titre_Album')];
     echo "<img src='imageAlbum.php?Code=" . $row['Code_Album'] . "'/>";
+    echo '<form method="post" action="amazon.php?Code=' .$row['ASIN'] . '">';
+    echo '<input name="Details" type="submit" value="Details">';
     echo "</a> <br>";
     }
 
