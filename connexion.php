@@ -33,7 +33,6 @@
       <div class="parallax-container ">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
       </div>
-        
       <form class="col s12" name="post" action="reponseConnexion.php">
         <div class="input-field col s6">
           <input name="Login" type="text" >
@@ -45,21 +44,21 @@
             <label class="orange-text darken-1" for="password">Password</label>
           </div>
         </div>
-        <input class="material-icons" name="Connect" type="submit" value="Sign in">
+        <input class="waves-effect waves-light btn " type="submit"><i class="material-icons right">input</i>
+
       </form>
-        
       <div class="parallax-container">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
       </div>
       <div class="fixed-action-btn vertical">
         <a class="btn-floating btn-large waves-effect waves-light grey lighten-1 "><i class="material-icons brown-text darken-1 grey lighten-1">toc</i></a>
       <ul>
-        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Sign out"><a href="deconnexion.php"><i class="material-icons brown-text darken-1">power_settings_new</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Sign out"><a href="deconnexion.php"><i class="material-icons brown-text darken-1">input</i></a></li>
         <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Sign in"><a href="connexion.php"><i class="material-icons brown-text darken-1">input</i></a></li>
         <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Access to your cart"><a href="panier.php"><i class="material-icons brown-text darken-1">shopping_cart</i></a></li>
         <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Sign up"><a href="Inscription.php"><i class="material-icons brown-text darken-1">mode_edit</i></a></li>
         <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="About our site"><a href="aPropos.html"><i class="material-icons brown-text darken-1">info_outline</i></a></li>
-        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Go back to menu"><a href="index.html"><i class="material-icons brown-text darken-1">view_headline</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Go back to menu"><a href="index2.html"><i class="material-icons brown-text darken-1">view_headline</i></a></li>
       </ul>
     </div>
   </main>
