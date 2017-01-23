@@ -24,7 +24,6 @@
             <label for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </form>
-
         </nav>
       </div>
     </header>
