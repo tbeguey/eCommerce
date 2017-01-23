@@ -16,7 +16,7 @@
   <header>
     <nav>
       <div class="nav-wrapper ">
-        <a href="#" class="brand-logo center brown-text darken-1">P'N'M</a>
+        <a href="#" class="brand-logo center brown-text darken-1">'N'M</a>
         <form method="post" action="reponseRecherche.php">
 
           <div class="input-field">
@@ -47,11 +47,9 @@
               <input name="login" type="text" >
               <label class="orange-text darken-1" for="last_name">Username</label>
             </div>
-            <div class="row">
               <div class="input-field col s12">
                 <input name="password" type="password">
                 <label class="orange-text darken-1" for="password">Password</label>
-              </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
@@ -59,9 +57,10 @@
                 <label class="orange-text darken-1" for="password ">Confirm password</label>
               </div>
             </div>
-            <input name="Connect" type="submit" value="Sign up">
+  <input class="waves-effect waves-light btn " name="Subscribe" type="submit">
+
           </form>
-           
+
       </div>
       <div class="parallax-container">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
