@@ -61,7 +61,7 @@
       join Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
       join Composer on Composer.Code_Oeuvre = Oeuvre.Code_Oeuvre
       join Musicien on Musicien.Code_Musicien = Composer.Code_Musicien
-      where Nom_Musicien Like '" .$search ."%'";
+      where Nom_Musicien Like '%" .$search ."%'";
 
       $requestWork = "Select DISTINCT Titre_Oeuvre, Album.Code_Album from Album
       join Disque on Album.Code_Album = Disque.Code_Album
@@ -70,15 +70,15 @@
       join Composition on Composition.Code_Composition = Enregistrement.Code_Composition
       join Composition_Oeuvre on Composition_Oeuvre.Code_Composition = Composition.Code_Composition
       join Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
-      where Titre_Oeuvre Like '" .$search ."%'";
+      where Titre_Oeuvre Like '%" .$search ."%'";
 
       $requestAlbum = "Select DISTINCT Titre_Album, Album.Code_Album, Enregistrement.Code_Morceau from Enregistrement
       join Composition_Disque on Composition_Disque.Code_Morceau = Enregistrement.Code_Morceau
       join Disque on Disque.Code_Disque = Composition_Disque.Code_Disque
       join Album on Disque.Code_Album = Album.Code_Album
-      where Titre_Album Like '" .$search ."%'";
+      where Titre_Album Like '%" .$search ."%'";
 
-      $requestRecording = "Select DISTINCT Titre, Code_Morceau, Durée from Enregistrement where Titre Like '" .$search ."%'";
+      $requestRecording = "Select DISTINCT Titre, Code_Morceau, Durée from Enregistrement where Titre Like '%" .$search ."%'";
 
       echo  "<div class='carousel brown-text darken-4  blue-grey lighten-2'>";
       echo "<a class='brown-text  darken-2'> Musiciens dont le nom commence par '  $search  ' : </a>";
@@ -131,7 +131,7 @@
         //echo"<audio class='materialboxed' width='600' src='extrait.php?Code=" .$row['Code_Morceau']">";
         echo  "<audio id='audio_core' autoplay='autoplay' <source src='extrait.php?.Code" .$row['Code_Morceau']." type='audio/mp3'>Your browser does not support the audio element.</audio>";
         echo "<form method='post' action='ajouterPanier.php?Code=" .$row['Code_Morceau'] . ">";
-        echo "<input type='hidden' name='Code' value=" .$row['Code_Morceau'] . "></input>";
+        echo "<input type='hidden' name='Code' value='" .$row['Code_Morceau'] . "'></input>";
         echo "<input name='Acheter' type='submit' value='Ajouter au panier'>";
         echo "</form>";
         echo "</ul>";
@@ -151,7 +151,7 @@
             <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Access to your cart"><a href="panier.php"><i class="material-icons brown-text darken-1">shopping_cart</i></a></li>
             <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Sign up"><a href="Inscription.php"><i class="material-icons brown-text darken-1">mode_edit</i></a></li>
             <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="About our site"><a href="aPropos.html"><i class="material-icons brown-text darken-1">info_outline</i></a></li>
-            <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Go back to menu"><a href="index2.html"><i class="material-icons brown-text darken-1">view_headline</i></a></li>
+            <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Go back to menu"><a href="index.html"><i class="material-icons brown-text darken-1">view_headline</i></a></li>
         </ul>
       </div>
 
