@@ -81,7 +81,7 @@
 
       $requestRecording = "Select DISTINCT Titre, Code_Morceau, Durée from Enregistrement where Titre Like '%" .$search ."%'";
 
-      echo '<h1> Musiciens dont le nom commence par ' . $search . ' : </h1>';
+      echo '<h1> Musiciens : </h1>';
     foreach ($pdo->query($requestMusician) as $row) {
     echo "<a href='album.php?Code=" . $row['Code_Album'] . "'>";
     echo $row[utf8_decode('Nom_Musicien')];
@@ -89,7 +89,7 @@
     echo "</a> <br>";
     }
 
-    echo '<h1> Album dont le nom commence par ' . $search . ' : </h1>';
+    echo '<h1> Albums : </h1>';
     foreach ($pdo->query($requestAlbum) as $row) {
     echo "<a href='enregistrement.php?Code=" . $row['Code_Morceau'] . "'>";
     echo $row[utf8_decode('Titre_Album')];
@@ -97,14 +97,14 @@
     echo "</a> <br>";
     }
 
-    echo '<h1> Oeuvres dont le titre commence par ' . $search . ' : </h1>';
+    echo '<h1> Oeuvres : </h1>';
     foreach ($pdo->query($requestWork) as $row) {
     echo "<a href='album.php?Code=" . $row['Code_Album'] . "'>";
     echo $row[utf8_decode('Titre_Oeuvre')];
     echo "</a> <br>";
     }
 
-    echo '<h1> Enregistrements dont le titre commence par ' . $search . ' : </h1>';
+    echo '<h1> Enregistrements : </h1>';
     echo "<ul>";
     foreach ($pdo->query($requestRecording) as $row) {
         echo "<li>";
