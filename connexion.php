@@ -29,6 +29,7 @@
       </div>
     </header>
 
+
     <main>
       <div class="parallax-container ">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
@@ -49,19 +50,20 @@
       <div class="parallax-container">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
       </div>
-      <div class="fixed-action-btn toolbar  ">
-        <a class="btn-floating btn-large waves-effect waves-light grey lighten-1 "><i class="material-icons brown-text darken-1 grey lighten-1">+</i></a>
-        <i class=""> </i>
+      <div class="fixed-action-btn vertical  ">
+        <a class="btn-floating btn-large waves-effect waves-light grey lighten-1 "><i class="material-icons brown-text darken-1 grey lighten-1">toc</i></a>
+      </a>
       <ul>
-        <li class="waves-effect waves-light"><a href="connexion.php"><i class="material-icons brown-text darken-1">LOGIN</i></a></li>
-        <li class="waves-effect waves-light"><a href="#!"><i class="material-icons brown-text darken-1">MY CART</i></a></li>
-        <li class="waves-effect waves-light"><a href="#!"><i class="material-icons brown-text darken-1">SUBSCRIPTION</i></a></li>
-        <li class="waves-effect waves-light "><a href="#!"><i class="material-icons brown-text darken-1">SETTINGS</i></a></li>
-        <li class="waves-effect waves-light "><a href="index2.html"><i class="material-icons brown-text darken-1">MENU</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Authentification"><a href="connexion.php"><i class="material-icons brown-text darken-1">input</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Access to your cart"><a href="panier.php"><i class="material-icons brown-text darken-1">shopping_cart</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Subscription"><a href="Inscription.php"><i class="material-icons brown-text darken-1">mode_edit</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="About our site"><a href="aPropos.html"><i class="material-icons brown-text darken-1">info_outline</i></a></li>
+        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Go back to menu"><a href="index2.html"><i class="material-icons brown-text darken-1">view_headline</i></a></li>
       </ul>
     </div>
+
+
   </main>
-  
   <footer class="page-footer grey lighten-1">
     <div class="container">
       <div class="row">
