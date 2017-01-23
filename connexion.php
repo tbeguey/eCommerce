@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="fr">
 <head>
+  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta charset="utf-8">
-  <title>eCommerce - Tricha - Beguey</title>
+  <title>Commerce - Tricha - Beguey</title>
 </head>
 
 <body>
@@ -22,10 +24,10 @@
             <label for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </form>
+
         </nav>
       </div>
     </header>
-
 
     <main>
       <div class="parallax-container ">
@@ -59,6 +61,7 @@
       </ul>
     </div>
   </main>
+  
   <footer class="page-footer grey lighten-1">
     <div class="container">
       <div class="row">
