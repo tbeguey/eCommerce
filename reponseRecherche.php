@@ -81,63 +81,46 @@
 
       $requestRecording = "Select DISTINCT Titre, Code_Morceau, Durée from Enregistrement where Titre Like '%" .$search ."%'";
 
-      echo "<a class='brown-text  darken-2'> Musiciens dont le nom commence par '  $search  ' : </a>";
-      echo  "<ul>";
-      foreach ($pdo->query($requestMusician) as $row) {
-      echo  "<li>";
-      echo "<a class=' blue-grey lighten-2' href='album.php?Code=" . $row['Code_Album'] . "'><img src='image.php?Code=" . $row['Code_Musicien'] . "'/>";
-      echo "<p>".$row[utf8_decode('Nom_Musicien')]."</p>";
-      echo "</li>";
-      }
-      echo "</ul>";
-      echo  "<div class='parallax-container'>";
-      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>";
-      echo  "</div>";
+      echo '<h1> Musiciens dont le nom commence par ' . $search . ' : </h1>';
+    foreach ($pdo->query($requestMusician) as $row) {
+    echo "<a href='album.php?Code=" . $row['Code_Album'] . "'>";
+    echo $row[utf8_decode('Nom_Musicien')];
+    echo "<img src='image.php?Code=" . $row['Code_Musicien'] . "'/>";
+    echo "</a> <br>";
+    }
 
-      echo "<a class='brown-text  darken-2'> Albums dont le nom commence par '  $search  ' : </a>";
-      foreach ($pdo->query($requestAlbum) as $row) {
-        echo "<li href='enregistrement.php?Code=" . $row['Code_Morceau'] . "'><img src='imageAlbum.php?Code=" . $row['Code_Album'] . "'/>";
-        echo '<form  name="post" action="amazon.php?Code=' . $row['ASIN'] . '">';
+    echo '<h1> Album dont le nom commence par ' . $search . ' : </h1>';
+    foreach ($pdo->query($requestAlbum) as $row) {
+    echo "<a href='enregistrement.php?Code=" . $row['Code_Morceau'] . "'>";
+    echo $row[utf8_decode('Titre_Album')];
+    echo "<img src='imageAlbum.php?Code=" . $row['Code_Album'] . "'/>";
+    echo "</a> <br>";
+    }
 
+    echo '<h1> Oeuvres dont le titre commence par ' . $search . ' : </h1>';
+    foreach ($pdo->query($requestWork) as $row) {
+    echo "<a href='album.php?Code=" . $row['Code_Album'] . "'>";
+    echo $row[utf8_decode('Titre_Oeuvre')];
+    echo "</a> <br>";
+    }
+
+    echo '<h1> Enregistrements dont le titre commence par ' . $search . ' : </h1>';
+    echo "<ul>";
+    foreach ($pdo->query($requestRecording) as $row) {
+        echo "<li>";
+        echo $row[utf8_decode('Titre')];
+        echo $row[utf8_decode('Durée')];
+        echo "<audio preload=auto src='extrait.php?Code=" . $row['Code_Morceau'] . "' controls></audio>";
+        echo '<form method="post" action="ajouterPanier.php?Code=' .$row['Code_Morceau'] . '">';
+        echo '<input type="hidden" name="Code" value=' .$row['Code_Morceau'] . '"></input>';
+        echo '<input name="Acheter" type="submit" value="Ajouter au panier">';
         echo '</form>';
-        echo "<p>".$row[utf8_decode('Titre_Album')]."</p>";
-        echo "</li> ";
-      }
+        echo '</li>';
+    }
+    echo "</ul>";
 
-
-      echo  "<div class='parallax-container'>";
-      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>";
-      echo  "</div>";
-
-      echo "<a class='brown-text  darken-2'> Oeuvres dont le nom commence par '  $search  ' : </a>";
-      foreach ($pdo->query($requestWork) as $row) {
-        echo "<div class='collection brown-text darken-3 blue-grey lighten-2'>";
-        echo "<a class='collection-item  ' >" .$row[utf8_decode('Titre_Oeuvre')] ."</a>";
-        echo "<a href='album.php?Code=" . $row['Code_Album'] . "'><img src='album.php?Code=" . $row['Code_Album'] . "'/>";
-        echo "</br>";
-        echo "</div>";
-      }
-
-      echo "</div>";
-      echo  "<div class='parallax-container'>";
-      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>";
-      echo  "</div>";
-
-      echo "<a class='brown-text  darken-2'> Enregistrements dont le nom commence par '  $search  ' : </a>";
-      foreach ($pdo->query($requestRecording) as $row) {
-        echo "<ul class='collection  blue-grey lighten-2'>";
-        echo "<li class'collection-item'>".$row[utf8_decode('Titre')]."  durée : ";
-        echo $row[utf8_decode('Durée')]."</li>";
-        echo "<li><audio preload=auto src='extrait.php?.Code=" .$row['Code_Morceau']."'</audio></li>";
-        echo "<form method='post' action='ajouterPanier.php?Code=" .$row['Code_Morceau'] . ">";
-        echo "<input type='hidden' name='Code' value='" .$row['Code_Morceau'] . "'></input>";
-        echo "<input name='Acheter' type='submit' value='Ajouter au panier'>";
-        echo "</form>";
-        echo "</ul>";
-      }
-      $pdo=null;
-      ?>
-
+    $pdo = null;
+?>
 
       <div class="parallax-container">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
