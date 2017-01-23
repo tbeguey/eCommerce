@@ -16,7 +16,7 @@
   <header>
     <nav>
       <div class="nav-wrapper ">
-        <a href="#" class="brand-logo center brown-text darken-1">'N'M</a>
+        <a href="#" class="brand-logo center brown-text darken-1">P'N'M</a>
         <form method="post" action="reponseRecherche.php">
 
           <div class="input-field">
