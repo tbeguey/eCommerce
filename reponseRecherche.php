@@ -88,6 +88,9 @@
         echo "</a> ";
       }
       echo "</div>";
+      echo  "<div class='parallax-container'>"
+      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>"
+      echo  "</div>"
 
       echo  "<div class='carousel brown-text darken-4  deep-orange lighten-3'>";
       echo "<a class='grey-text  lighten-2'> Albums dont le nom commence par '  $search  ' : </a>";
@@ -98,6 +101,12 @@
       }
       echo "</div>";
 
+
+      echo "</div>";
+      echo  "<div class='parallax-container'>"
+      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>"
+      echo  "</div>"
+
       echo "<a class='grey-text  lighten-2 '> Oeuvres dont le nom commence par '  $search  ' : </a>";
       foreach ($pdo->query($requestWork) as $row) {
         echo "<div class='collection  deep-orange lighten-3'>";
@@ -107,6 +116,10 @@
         echo "</div>";
       }
 
+      echo "</div>";
+      echo  "<div class='parallax-container'>"
+      echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>"
+      echo  "</div>"
       echo '<h1> Enregistrements dont le titre commence par ' . $search . ' : </h1>';
       foreach ($pdo->query($requestRecording) as $row) {
         echo "<ul class='collection grey lighten-2'>";
@@ -131,30 +144,30 @@
       </div>
       <div class="fixed-action-btn vertical  ">
         <a class="btn-floating btn-large waves-effect waves-light grey lighten-1 "><i class="material-icons brown-text darken-1 grey lighten-1">toc</i></a>
-      <ul>
-        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Authentification"><a href="connexion.php"><i class="material-icons brown-text darken-1">input</i></a></li>
-        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Access to your cart"><a href="panier.php"><i class="material-icons brown-text darken-1">shopping_cart</i></a></li>
-        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Subscription"><a href="Inscription.php"><i class="material-icons brown-text darken-1">mode_edit</i></a></li>
-        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="About our site"><a href="aPropos.html"><i class="material-icons brown-text darken-1">info_outline</i></a></li>
-        <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Go back to menu"><a href="index2.html"><i class="material-icons brown-text darken-1">view_headline</i></a></li>
-      </ul>
-    </div>
+        <ul>
+          <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Authentification"><a href="connexion.php"><i class="material-icons brown-text darken-1">input</i></a></li>
+          <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Access to your cart"><a href="panier.php"><i class="material-icons brown-text darken-1">shopping_cart</i></a></li>
+          <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Subscription"><a href="Inscription.php"><i class="material-icons brown-text darken-1">mode_edit</i></a></li>
+          <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="About our site"><a href="aPropos.html"><i class="material-icons brown-text darken-1">info_outline</i></a></li>
+          <li class="waves-effect btn-floating tooltipped  grey lighten-1"data-position="left" data-delay="50" data-tooltip="Go back to menu"><a href="index2.html"><i class="material-icons brown-text darken-1">view_headline</i></a></li>
+        </ul>
+      </div>
 
 
-  </main>
-  <footer class="page-footer grey lighten-1">
-    <div class="container">
-      <div class="row">
-        <h5 class="center brown-text darken-1">A site created by Théo Beguey and Yamin Tricha </h5>
-        <div class="col s6 offset-s3 center ">
-          <h5 class=" links brown-text darken-1 ">Informations :</h5>
-          <ul>
-            <li><a class="brown-text darken-1  " href="#!">Contact us </a></li>
-            <li><a class="brown-text darken-1" href="aPropos.html">About</a></li>
-          </ul>
+    </main>
+    <footer class="page-footer grey lighten-1">
+      <div class="container">
+        <div class="row">
+          <h5 class="center brown-text darken-1">A site created by Théo Beguey and Yamin Tricha </h5>
+          <div class="col s6 offset-s3 center ">
+            <h5 class=" links brown-text darken-1 ">Informations :</h5>
+            <ul>
+              <li><a class="brown-text darken-1  " href="#!">Contact us </a></li>
+              <li><a class="brown-text darken-1" href="aPropos.html">About</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-</body>
-</html>
+    </footer>
+  </body>
+  </html>

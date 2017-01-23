@@ -44,7 +44,7 @@
             <label class="orange-text darken-1" for="password">Password</label>
           </div>
         </div>
-        <input class="material-icons" name="Connect" type="submit" value="Sign in">
+        <input class="material-icons" name="Connect" type="submit" value="material-icons">
       </form>
       <div class="parallax-container">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
