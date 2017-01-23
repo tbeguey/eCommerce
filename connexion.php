@@ -44,7 +44,7 @@
             <label class="orange-text darken-1" for="password">Password</label>
           </div>
         </div>
-        <input class="waves-effect waves-light btn " type="submit"><i class="material-icons right">input</i>
+        <input class="waves-effect waves-light btn " type="submit">
 
       </form>
       <div class="parallax-container">
