@@ -34,6 +34,7 @@
       <div class="parallax-container ">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
       </div>
+
       <?php
       session_start();
       if (!isset($_SESSION["NOM_USER"])){
@@ -80,32 +81,30 @@
 
       $requestRecording = "Select DISTINCT Titre, Code_Morceau, Durée from Enregistrement where Titre Like '%" .$search ."%'";
 
-      echo  "<div class='carousel brown-text darken-4  blue-grey lighten-2'>";
       echo "<a class='brown-text  darken-2'> Musiciens dont le nom commence par '  $search  ' : </a>";
+      echo  "<ul>";
       foreach ($pdo->query($requestMusician) as $row) {
-        echo "<a class='carousel-item active  blue-grey lighten-2' href='album.php?Code=" . $row['Code_Album'] . "'><img src='image.php?Code=" . $row['Code_Musicien'] . "'/>";
-        echo "<p>".$row[utf8_decode('Nom_Musicien')]."</p>";
-        echo "</a> ";
+      echo  "<li>";
+      echo "<a class=' blue-grey lighten-2' href='album.php?Code=" . $row['Code_Album'] . "'><img src='image.php?Code=" . $row['Code_Musicien'] . "'/>";
+      echo "<p>".$row[utf8_decode('Nom_Musicien')]."</p>";
+      echo "</li>";
       }
-      echo "</div>";
+      echo "</ul>";
       echo  "<div class='parallax-container'>";
       echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>";
       echo  "</div>";
 
-      echo  "<div class='carousel brown-text darken-4  blue-grey lighten-2'>";
       echo "<a class='brown-text  darken-2'> Albums dont le nom commence par '  $search  ' : </a>";
       foreach ($pdo->query($requestAlbum) as $row) {
-        echo "<a class='carousel-item active' href='enregistrement.php?Code=" . $row['Code_Morceau'] . "'><img src='imageAlbum.php?Code=" . $row['Code_Album'] . "'/>";
+        echo "<li href='enregistrement.php?Code=" . $row['Code_Morceau'] . "'><img src='imageAlbum.php?Code=" . $row['Code_Album'] . "'/>";
         echo '<form  name="post" action="amazon.php?Code=' . $row['ASIN'] . '">';
-        echo '<input class="material-icons" name="Connect" type="submit" value="Details">';
+
         echo '</form>';
         echo "<p>".$row[utf8_decode('Titre_Album')]."</p>";
-        echo "</a> ";
+        echo "</li> ";
       }
-      echo "</div>";
 
 
-      echo "</div>";
       echo  "<div class='parallax-container'>";
       echo  "<div class='parallax'><img src='materialize/parallux.jpg'></div>";
       echo  "</div>";
@@ -114,7 +113,7 @@
       foreach ($pdo->query($requestWork) as $row) {
         echo "<div class='collection brown-text darken-3 blue-grey lighten-2'>";
         echo "<a class='collection-item  ' >" .$row[utf8_decode('Titre_Oeuvre')] ."</a>";
-        echo "<a class='carousel-item' href='album.php?Code=" . $row['Code_Album'] . "'><img src='album.php?Code=" . $row['Code_Album'] . "'/>";
+        echo "<a href='album.php?Code=" . $row['Code_Album'] . "'><img src='album.php?Code=" . $row['Code_Album'] . "'/>";
         echo "</br>";
         echo "</div>";
       }
