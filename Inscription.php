@@ -34,7 +34,7 @@
         <div class="parallax"><img src="materialize/parallux.jpg"></div>
       </div>
         <div class="section ">
-          <form  name="post" action="reponseInscription.php">
+          <form  method="post" action="reponseInscription.php">
             <div class="input-field col s6">
               <input name="nom" type="text" >
               <label class="orange-text darken-1" for="last_name">Name</label>
@@ -61,6 +61,7 @@
             </div>
             <input name="Connect" type="submit" value="Sign up">
           </form>
+           
       </div>
       <div class="parallax-container">
         <div class="parallax"><img src="materialize/parallux.jpg"></div>

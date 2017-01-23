@@ -19,7 +19,7 @@ if($stmt->fetchColumn() > 0){ //utilisateur enregistré avec mot de passe correc
   header("Location:index.html");
 }
 else{//Mot de passe (et/ou login) incorrect : rejet de l'utilisateur
-  header("Locationconnexion.php");
+  header("Location:connexion.php");
 }
 $dbh = null;
 ?>
